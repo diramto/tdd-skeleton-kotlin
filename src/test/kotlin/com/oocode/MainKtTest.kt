@@ -33,4 +33,14 @@ internal class MainKtTest {
 
         verify(robotMock).pileOver(8, 6)
     }
+
+    @Test
+    fun test_4() {
+        val robotMock = mock(Robot::class.java)
+
+        parse("pile 8 over 6\nmove 5 onto 2", robotMock)
+
+        verify(robotMock).pileOver(8, 6)
+        verify(robotMock).moveOnto(5, 2)
+    }
 }
